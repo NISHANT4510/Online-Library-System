@@ -61,17 +61,25 @@ src/
 └── main.jsx               # Entry point
 
 
-📥 Installation & Usage
+## 📥 Installation & Usage
+
 Follow these steps to run the project locally:
 
-1. Clone the Repository
-git clone https://github.com/your-username/library-management-system.git
-cd library-management-system
+```bash
+# 1. Clone the repository
+git clone https://github.com/NISHANT4510/Online-Library-System.git
 
+# 2. Navigate to the project directory
+cd Online-Library-System/ols
 
-2. Install Dependencies
+# 3. Install dependencies
 npm install
 
-3. Start Development Server
+# 4. Start the development server
 npm run dev
+
+Once the server is running, open your browser and go to:
+
+http://localhost:5173
+
 
