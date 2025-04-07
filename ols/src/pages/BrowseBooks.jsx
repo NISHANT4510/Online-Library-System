@@ -1,13 +1,15 @@
+
 import React, { useState } from "react";
-import booksData from "../data/booksData";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-// Extract unique categories
-const categories = [...new Set(booksData.map(book => book.category))];
-
 const BrowseBooks = () => {
+  const booksData = useSelector((state) => state.books);
   const [searchText, setSearchText] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
+
+  // Extract unique categories
+  const categories = ["All", ...new Set(booksData.map((book) => book.category))];
 
   // Filter logic
   const filteredBooks = booksData.filter((book) => {
@@ -38,14 +40,6 @@ const BrowseBooks = () => {
 
       {/* 🏷️ Category Filter */}
       <div className="mb-6 flex flex-wrap gap-2">
-        <button
-          onClick={() => setSelectedCategory("All")}
-          className={`px-3 py-1 rounded-full border ${
-            selectedCategory === "All" ? "bg-blue-500 text-white" : "bg-gray-100"
-          }`}
-        >
-          All
-        </button>
         {categories.map((category) => (
           <button
             key={category}
@@ -91,3 +85,4 @@ const BrowseBooks = () => {
 };
 
 export default BrowseBooks;
+
